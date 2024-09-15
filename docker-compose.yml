@@ -1,0 +1,18 @@
+services:
+  frontend:
+    container_name: frontend_random_image
+    image: frontend_random_image
+    networks:
+      - app-network
+    ports:
+      - 8084:8084
+  backend:
+    container_name: backend_random_image
+    image: api-random-image
+    networks:
+      - app-network
+    ports:
+      - 8082:8082
+networks:
+  app-network:
+    driver: bridge
